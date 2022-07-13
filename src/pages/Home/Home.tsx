@@ -53,7 +53,7 @@ const HomeComponent = () => {
     <>
       <Header />
       <S.Container>
-        <Row>
+        <Grid xs={4}>
           <Col>
             <Row>
               <FormControl fullWidth>
@@ -120,58 +120,57 @@ const HomeComponent = () => {
             </Row>
             <Spacer y={1.5} />
             <Row>
-              <Grid.Container alignItems="center">
-                <Grid xs={3}>
-                  <TextField type="date" fullWidth size="small" />
+              <Grid.Container alignItems="center" justify="flex-end">
+                <Grid>
+                  <Text color="#7A7A7A">Data de início de sentença :</Text>
                 </Grid>
                 <Spacer />
-                <Grid>
-                  <Text color="#787878">
-                    Data de início de cumprimento de sentença.
-                  </Text>
+                <Grid xs={4}>
+                  <TextField type="date" fullWidth size="small" />
                 </Grid>
               </Grid.Container>
             </Row>
             <Spacer y={1.5} />
             <Row>
-              <Grid.Container alignItems="center">
-                <Grid xs={3}>
-                  <TextField type="date" fullWidth size="small" />
+              <Grid.Container alignItems="center" justify="flex-end">
+                <Grid>
+                  <Text color="#7A7A7A"> Data de resposta :</Text>
                 </Grid>
                 <Spacer />
-                <Grid>
-                  <Text color="#787878">Data de Resposta.</Text>
+                <Grid xs={4}>
+                  <TextField type="date" fullWidth size="small" />
                 </Grid>
               </Grid.Container>
             </Row>
             <Spacer y={1.5} />
             <Row>
-              <Grid.Container alignItems="center">
-                <Grid xs={3}>
-                  <TextField type="date" fullWidth size="small" />
+              <Grid.Container alignItems="center" justify="flex-end">
+                <Grid>
+                  <Text color="#7A7A7A"> Data de conclusão para a sentença :</Text>
                 </Grid>
                 <Spacer />
-                <Grid>
-                  <Text color="#787878">
-                    Data de conclusão para a sentença.
-                  </Text>
+                <Grid xs={4}>
+                  <TextField type="date" fullWidth size="small" />
                 </Grid>
               </Grid.Container>
             </Row>
             <Spacer y={1.5} />
             <Row justify="space-between">
-              <Button size="sm" css={{ backgroundColor: '#023A51' }}>
-                <Text color="#fff"> Calcular</Text>
-              </Button>
+              
               <Button size="sm" css={{ borderColor: '#023A51' }} bordered>
                 <Text color="#023A51">Limpar</Text>
               </Button>
+              <Button size="sm" css={{ backgroundColor: '#023A51' }}>
+                <Text color="#fff"> Calcular</Text>
+              </Button>
             </Row>
           </Col>
+        </Grid>
+        <Grid xs={8}>
           <Col>
             <Row justify="center">TABELA</Row>
           </Col>
-        </Row>
+        </Grid>
       </S.Container>
     </>
   );
