@@ -1,10 +1,28 @@
 import React from 'react';
-import { withAuth } from '../../hocs';
+import { Row, Col, Input } from '@nextui-org/react';
 
+import { Header } from '../../components';
+import { withAuth } from '../../hocs';
 import * as S from './styles';
 
 const HomeComponent = () => {
-  return <S.Container> Home </S.Container>;
+  return (
+    <>
+      <Header />
+      <S.Container>
+        <Row>
+          <Col>
+            <Row>
+              <Input />
+            </Row>
+          </Col>
+          <Col>
+            <Row>TABELA</Row>
+          </Col>
+        </Row>
+      </S.Container>
+    </>
+  );
 };
 
 const Home = withAuth(HomeComponent);
