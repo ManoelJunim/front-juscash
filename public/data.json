@@ -1,0 +1,1042 @@
+{
+    "reu_ajustado": {
+        "40": {
+            "nome": "Outros",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                },
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                },
+                {
+                    "classe_id": 22,
+                    "nome_classe": "Telefonia"
+                },
+                {
+                    "classe_id": 12,
+                    "nome_classe": "INSS"
+                },
+                {
+                    "classe_id": 7,
+                    "nome_classe": "Energia"
+                },
+                {
+                    "classe_id": 11,
+                    "nome_classe": "Financeira"
+                },
+                {
+                    "classe_id": 9,
+                    "nome_classe": "FAZENDA DO ESTADO"
+                },
+                {
+                    "classe_id": 20,
+                    "nome_classe": "Seguradora"
+                },
+                {
+                    "classe_id": 1,
+                    "nome_classe": "Aviação"
+                },
+                {
+                    "classe_id": 4,
+                    "nome_classe": "Construção / Imóveis"
+                },
+                {
+                    "classe_id": 19,
+                    "nome_classe": "Saúde"
+                },
+                {
+                    "classe_id": 26,
+                    "nome_classe": "Varejo"
+                },
+                {
+                    "classe_id": 21,
+                    "nome_classe": "TV"
+                },
+                {
+                    "classe_id": 18,
+                    "nome_classe": "Saneamento"
+                },
+                {
+                    "classe_id": 5,
+                    "nome_classe": "DPVAT"
+                },
+                {
+                    "classe_id": 24,
+                    "nome_classe": "Turismo"
+                },
+                {
+                    "classe_id": 6,
+                    "nome_classe": "Educação"
+                },
+                {
+                    "classe_id": 8,
+                    "nome_classe": "Entidade Pública"
+                },
+                {
+                    "classe_id": 10,
+                    "nome_classe": "FIDC"
+                },
+                {
+                    "classe_id": 0,
+                    "nome_classe": "Automotivo"
+                },
+                {
+                    "classe_id": 17,
+                    "nome_classe": "Prefeitura"
+                },
+                {
+                    "classe_id": 13,
+                    "nome_classe": "Igreja"
+                },
+                {
+                    "classe_id": 25,
+                    "nome_classe": "UNIÃO"
+                },
+                {
+                    "classe_id": 16,
+                    "nome_classe": "Petróleo"
+                },
+                {
+                    "classe_id": 14,
+                    "nome_classe": "Mídia"
+                },
+                {
+                    "classe_id": 23,
+                    "nome_classe": "Transporte"
+                },
+                {
+                    "classe_id": 3,
+                    "nome_classe": "Conselho Profissional"
+                }
+            ]
+        },
+        "7": {
+            "nome": "BANCO DO BRASIL S/A",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "52": {
+            "nome": "TELEFONICA BRASIL S.A.",
+            "classe": [
+                {
+                    "classe_id": 22,
+                    "nome_classe": "Telefonia"
+                }
+            ]
+        },
+        "6": {
+            "nome": "BANCO BRADESCO S.A.",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "32": {
+            "nome": "INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS",
+            "classe": [
+                {
+                    "classe_id": 12,
+                    "nome_classe": "INSS"
+                }
+            ]
+        },
+        "28": {
+            "nome": "Fazenda do Estado de Sao Paulo",
+            "classe": [
+                {
+                    "classe_id": 9,
+                    "nome_classe": "FAZENDA DO ESTADO"
+                }
+            ]
+        },
+        "14": {
+            "nome": "Banco Santander Brasil S/A",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "33": {
+            "nome": "Itaú Unibanco S.A",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "49": {
+            "nome": "Sul América Companhia de Seguros",
+            "classe": [
+                {
+                    "classe_id": 20,
+                    "nome_classe": "Seguradora"
+                }
+            ]
+        },
+        "22": {
+            "nome": "Companhia Paulista de Força e Luz - CPFL",
+            "classe": [
+                {
+                    "classe_id": 7,
+                    "nome_classe": "Energia"
+                }
+            ]
+        },
+        "21": {
+            "nome": "Claro S/A",
+            "classe": [
+                {
+                    "classe_id": 22,
+                    "nome_classe": "Telefonia"
+                }
+            ]
+        },
+        "9": {
+            "nome": "BV Financeira S/A Crédito, Financiamento e Investimento",
+            "classe": [
+                {
+                    "classe_id": 11,
+                    "nome_classe": "Financeira"
+                }
+            ]
+        },
+        "34": {
+            "nome": "MRV Engenharia e Participações S/A",
+            "classe": [
+                {
+                    "classe_id": 4,
+                    "nome_classe": "Construção / Imóveis"
+                }
+            ]
+        },
+        "53": {
+            "nome": "Tim Celular S/A",
+            "classe": [
+                {
+                    "classe_id": 22,
+                    "nome_classe": "Telefonia"
+                }
+            ]
+        },
+        "1": {
+            "nome": "AYMORÉ CRÉDITO, FINANCIAMENTO E INVESTIMENTO S/A",
+            "classe": [
+                {
+                    "classe_id": 11,
+                    "nome_classe": "Financeira"
+                }
+            ]
+        },
+        "8": {
+            "nome": "BANCO PAN S/A",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "26": {
+            "nome": "ELEKTRO REDES S.A.",
+            "classe": [
+                {
+                    "classe_id": 7,
+                    "nome_classe": "Energia"
+                }
+            ]
+        },
+        "44": {
+            "nome": "Prefeitura de Sao Paulo - através do Procurador(a) Coordenador(a) da Central de Mandados Port.: 33/09 - PGM.G",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "51": {
+            "nome": "TAM LINHAS AEREAS S/A (LATAM AIRLINES BRASIL)",
+            "classe": [
+                {
+                    "classe_id": 1,
+                    "nome_classe": "Aviação"
+                }
+            ]
+        },
+        "47": {
+            "nome": "SKY BRASIL SERVIÇOS LTDA",
+            "classe": [
+                {
+                    "classe_id": 21,
+                    "nome_classe": "TV"
+                }
+            ]
+        },
+        "10": {
+            "nome": "Banco BMG S.A.",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "27": {
+            "nome": "Eletropaulo Metropolitana Eletricidade de São Paulo S/A",
+            "classe": [
+                {
+                    "classe_id": 7,
+                    "nome_classe": "Energia"
+                }
+            ]
+        },
+        "3": {
+            "nome": "Amil Assistência Médica Internacional LTDA",
+            "classe": [
+                {
+                    "classe_id": 19,
+                    "nome_classe": "Saúde"
+                }
+            ]
+        },
+        "20": {
+            "nome": "Cia de Saneamento Básico do Estado de São Paulo - SABESP",
+            "classe": [
+                {
+                    "classe_id": 18,
+                    "nome_classe": "Saneamento"
+                }
+            ]
+        },
+        "11": {
+            "nome": "Banco Bradescard S/A",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "30": {
+            "nome": "GOL Linhas Aéreas S.A.",
+            "classe": [
+                {
+                    "classe_id": 1,
+                    "nome_classe": "Aviação"
+                }
+            ]
+        },
+        "13": {
+            "nome": "Banco Safra S/A",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "48": {
+            "nome": "Seguradora Líder dos Consórcios DPVAT S/A",
+            "classe": [
+                {
+                    "classe_id": 5,
+                    "nome_classe": "DPVAT"
+                }
+            ]
+        },
+        "37": {
+            "nome": "Nextel Telecomunicações Ltda",
+            "classe": [
+                {
+                    "classe_id": 22,
+                    "nome_classe": "Telefonia"
+                }
+            ]
+        },
+        "39": {
+            "nome": "Omni S/A - Credito, Financiamento e Investimento",
+            "classe": [
+                {
+                    "classe_id": 11,
+                    "nome_classe": "Financeira"
+                }
+            ]
+        },
+        "43": {
+            "nome": "Porto Seguro Companhia de Seguros Gerais",
+            "classe": [
+                {
+                    "classe_id": 20,
+                    "nome_classe": "Seguradora"
+                }
+            ]
+        },
+        "15": {
+            "nome": "Bradesco Saúde S/A",
+            "classe": [
+                {
+                    "classe_id": 19,
+                    "nome_classe": "Saúde"
+                }
+            ]
+        },
+        "5": {
+            "nome": "Azul Linhas Aéreas Brasileiras S.A.",
+            "classe": [
+                {
+                    "classe_id": 1,
+                    "nome_classe": "Aviação"
+                }
+            ]
+        },
+        "18": {
+            "nome": "CVC Brasil Operadora e Agencia de Viagens S/A",
+            "classe": [
+                {
+                    "classe_id": 24,
+                    "nome_classe": "Turismo"
+                }
+            ]
+        },
+        "54": {
+            "nome": "Via Varejo S.A.",
+            "classe": [
+                {
+                    "classe_id": 26,
+                    "nome_classe": "Varejo"
+                }
+            ]
+        },
+        "4": {
+            "nome": "Anhanguera Educacional Ltda",
+            "classe": [
+                {
+                    "classe_id": 6,
+                    "nome_classe": "Educação"
+                }
+            ]
+        },
+        "35": {
+            "nome": "Magazine Luiza S/A",
+            "classe": [
+                {
+                    "classe_id": 26,
+                    "nome_classe": "Varejo"
+                }
+            ]
+        },
+        "24": {
+            "nome": "DECOLAR.COM LTDA",
+            "classe": [
+                {
+                    "classe_id": 1,
+                    "nome_classe": "Aviação"
+                }
+            ]
+        },
+        "17": {
+            "nome": "CREFISA S/A. CRÉDITO, FINANCIAMENTO E INVESTIMENTOS",
+            "classe": [
+                {
+                    "classe_id": 11,
+                    "nome_classe": "Financeira"
+                }
+            ]
+        },
+        "38": {
+            "nome": "Oi Móvel S/A",
+            "classe": [
+                {
+                    "classe_id": 22,
+                    "nome_classe": "Telefonia"
+                }
+            ]
+        },
+        "50": {
+            "nome": "SÃO PAULO PREVIDÊNCIA - SPPREV",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "23": {
+            "nome": "Companhia de Desenvolvimento Habitacional e Urbano do Estado de São Paulo - CDHU",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "55": {
+            "nome": "Zurich Santander Brasil Seguros S.A.",
+            "classe": [
+                {
+                    "classe_id": 20,
+                    "nome_classe": "Seguradora"
+                }
+            ]
+        },
+        "19": {
+            "nome": "Central Nacional Unimed - Cooperativa Central",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "12": {
+            "nome": "Banco Mercantil do Brasil S.A",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "41": {
+            "nome": "PREFEITURA MUNICIPAL DE JAHU",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "42": {
+            "nome": "PREFEITURA MUNICIPAL DE SÃO PAULO",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "2": {
+            "nome": "Alvorada Cartões Crédito Financiamento e Investimento S/A",
+            "classe": [
+                {
+                    "classe_id": 11,
+                    "nome_classe": "Financeira"
+                }
+            ]
+        },
+        "46": {
+            "nome": "Primo Rossi Administradora de Consorcio Ltda",
+            "classe": [
+                {
+                    "classe_id": 11,
+                    "nome_classe": "Financeira"
+                }
+            ]
+        },
+        "25": {
+            "nome": "DETRAN - DEPARTAMENTO ESTADUAL DE TRÂNSITO - SÃO PAULO",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "45": {
+            "nome": "Prefeitura do Municipio de São Paulo",
+            "classe": [
+                {
+                    "classe_id": 15,
+                    "nome_classe": "Outros"
+                }
+            ]
+        },
+        "31": {
+            "nome": "Hsbc Bank Brasil S/A Banco Multiplo",
+            "classe": [
+                {
+                    "classe_id": 2,
+                    "nome_classe": "Banco"
+                }
+            ]
+        },
+        "29": {
+            "nome": "GAFISA S.A.",
+            "classe": [
+                {
+                    "classe_id": 4,
+                    "nome_classe": "Construção / Imóveis"
+                }
+            ]
+        },
+        "16": {
+            "nome": "CARREFOUR COMÉRCIO E INDUSTRIA LTDA",
+            "classe": [
+                {
+                    "classe_id": 26,
+                    "nome_classe": "Varejo"
+                }
+            ]
+        },
+        "0": {
+            "nome": "AVIANCA - AEROVIAS NACIONAIS DA COLÔMBIA S/A",
+            "classe": [
+                {
+                    "classe_id": 1,
+                    "nome_classe": "Aviação"
+                }
+            ]
+        },
+        "36": {
+            "nome": "Mapfre Seguros Gerais S/A",
+            "classe": [
+                {
+                    "classe_id": 20,
+                    "nome_classe": "Seguradora"
+                }
+            ]
+        }
+    },
+    "assunto_processo": {
+        "21": "Outros",
+        "17": "Liquidação / Cumprimento / Execução",
+        "15": "Indenização por Dano Moral",
+        "6": "DIREITO PROCESSUAL CIVIL E DO TRABALHO-Liquidação / Cumprimento / Execução-Obrigação de Fazer / Não Fazer",
+        "14": "Indenização por Dano Material",
+        "30": "Valor da Execução / Cálculo / Atualização",
+        "27": "Rescisão do contrato e devolução do dinheiro",
+        "25": "Prestação de Serviços",
+        "13": "Inclusão Indevida em Cadastro de Inadimplentes",
+        "23": "Perdas e Danos",
+        "0": "Acidente de Trânsito",
+        "20": "Obrigações",
+        "24": "Planos de Saúde",
+        "5": "Contratos Bancários",
+        "3": "Compra e Venda",
+        "4": "Constrição / Penhora / Avaliação / Indisponibilidade de Bens",
+        "18": "Locação de Imóvel",
+        "29": "Telefonia",
+        "11": "Expurgos Inflacionários / Planos Econômicos",
+        "8": "Defeito, nulidade ou anulação",
+        "10": "Espécies de Contratos",
+        "26": "Práticas Abusivas",
+        "22": "Pagamento",
+        "2": "Cheque",
+        "16": "Interpretação / Revisão de Contrato",
+        "1": "Bancários",
+        "28": "Seguro",
+        "9": "Despesas Condominiais",
+        "7": "DIREITO PROCESSUAL CIVIL E DO TRABALHO-Partes e Procuradores-Sucumbência -Honorários Advocatícios",
+        "19": "Nota Promissória",
+        "12": "Inadimplemento"
+    },
+    "unidade_judiciaria": {
+        "394": "Outros",
+        "217": "Foro de Jales Vara do Juizado Especial Cível e Criminal",
+        "24": "Foro Central Cível 36ª Vara Cível",
+        "377": "Foro de São Vicente Vara do Juizado Especial Cível e Criminal",
+        "84": "Foro Regional VII - Itaquera Vara do Juizado Especial Cível",
+        "63": "Foro Regional III - Jabaquara 1ª Vara do Juizado Especial Cível",
+        "154": "Foro de Campinas 1ª Vara do Juizado Especial Cível",
+        "370": "Foro de São José dos Campos 6ª Vara Cível",
+        "342": "Foro de São Bernardo do Campo 1ª Vara Cível",
+        "8": "Foro Central Cível 11ª Vara Cível",
+        "47": "Foro Regional I - Santana Vara da Infância e Juventude",
+        "358": "Foro de São José do Rio Preto 2ª Vara Cível",
+        "86": "Foro Regional VIII - Tatuapé 1ª Vara do Juizado Especial Cível",
+        "93": "Foro Regional XI - Pinheiros 1ª Vara do Juizado Especial Cível",
+        "296": "Foro de Presidente Prudente Vara do Juizado Especial Cível",
+        "233": "Foro de Limeira 4ª Vara Cível",
+        "213": "Foro de Jaboticabal Vara do Juizado Especial Cível e Criminal",
+        "21": "Foro Central Cível 32ª Vara Cível",
+        "183": "Foro de Franca Vara do Juizado Especial Cível",
+        "361": "Foro de São José do Rio Preto 4ª Vara Cível",
+        "95": "Foro Regional XI - Pinheiros 3ª Vara Cível",
+        "273": "Foro de Piracicaba 2ª Vara Cível",
+        "231": "Foro de Limeira 2ª Vara Cível",
+        "368": "Foro de São José dos Campos 2ª Vara do Juizado Especial Cível",
+        "19": "Foro Central Cível 2ª Vara Cível",
+        "345": "Foro de São Bernardo do Campo 4ª Vara Cível",
+        "234": "Foro de Limeira Vara do Juizado Especial Cível e Criminal",
+        "64": "Foro Regional III - Jabaquara 2ª Vara Cível",
+        "208": "Foro de Itanhaém Vara do Juizado Especial Cível e Criminal",
+        "265": "Foro de Palmeira D'Oeste Juizado Especial Cível e Criminal",
+        "32": "Foro Central Cível 45ª Vara Cível",
+        "274": "Foro de Piracicaba 3ª Vara Cível",
+        "366": "Foro de São José dos Campos 1ª Vara do Juizado Especial Cível",
+        "294": "Foro de Presidente Prudente 2ª Vara Cível",
+        "14": "Foro Central Cível 19ª Vara Cível",
+        "59": "Foro Regional II - Santo Amaro 6ª Vara Cível",
+        "153": "Foro de Campinas 1ª Vara Cível",
+        "94": "Foro Regional XI - Pinheiros 2ª Vara Cível",
+        "130": "Foro de Barretos 2ª Vara Cível",
+        "131": "Foro de Barretos 3ª Vara Cível",
+        "25": "Foro Central Cível 37ª Vara Cível",
+        "364": "Foro de São José do Rio Preto Vara do Juizado Especial Cível",
+        "11": "Foro Central Cível 15ª Vara Cível",
+        "320": "Foro de Santo Anastácio Juizado Especial Cível",
+        "258": "Foro de Osasco 1ª Vara Cível",
+        "120": "Foro de Araçatuba Vara do Juizado Especial Cível",
+        "106": "Foro de Americana Vara do Juizado Especial Cível",
+        "96": "Foro Regional XI - Pinheiros 5ª Vara Cível",
+        "158": "Foro de Campinas 9ª Vara Cível",
+        "182": "Foro de Franca 3ª Vara Cível",
+        "60": "Foro Regional II - Santo Amaro 7ª Vara Cível",
+        "129": "Foro de Barretos 1ª Vara Cível",
+        "92": "Foro Regional XI - Pinheiros 1ª Vara Cível",
+        "58": "Foro Regional II - Santo Amaro 5ª Vara Cível",
+        "138": "Foro de Bauru 4ª Vara Cível",
+        "112": "Foro de Araraquara 1ª Vara Cível",
+        "204": "Foro de Hortolândia Vara do Juizado Especial Cível e Criminal",
+        "6": "Foro Central - Fazenda Pública/Acidentes 8ª Vara de Fazenda Pública",
+        "136": "Foro de Batatais JUIZADO ESPECIAL CÍVEL E CRIMINAL",
+        "391": "Foro de Votuporanga 2ª Vara Cível",
+        "239": "Foro de Marília 1ª Vara Cível",
+        "65": "Foro Regional III - Jabaquara 3ª Vara Cível",
+        "111": "Foro de Angatuba Juizado Especial Cível e Criminal",
+        "319": "Foro de Santana de Parnaíba 1ª Vara Cível",
+        "156": "Foro de Campinas 6ª Vara Cível",
+        "304": "Foro de Ribeirão Preto 7ª Vara Cível",
+        "102": "Foro Regional de Vila Mimosa 4ª Vara",
+        "302": "Foro de Ribeirão Preto 5ª Vara Cível",
+        "232": "Foro de Limeira 3ª Vara Cível",
+        "263": "Foro de Ourinhos Vara do Juizado Especial Cível",
+        "331": "Foro de Santos 1ª Vara Cível",
+        "10": "Foro Central Cível 13ª Vara Cível",
+        "13": "Foro Central Cível 17ª Vara Cível",
+        "230": "Foro de Limeira 1ª Vara Cível",
+        "214": "Foro de Jacareí 2ª Vara Cível",
+        "393": "Foro de Votuporanga Vara do Juizado Especial Cível e Criminal",
+        "347": "Foro de São Bernardo do Campo 7ª Vara Cível",
+        "244": "Foro de Marília Vara do Juizado Especial Cível",
+        "113": "Foro de Araraquara 2ª Vara Cível",
+        "61": "Foro Regional II - Santo Amaro 9ª Vara Cível",
+        "4": "Foro Central - Fazenda Pública/Acidentes 3ª Vara de Fazenda Pública",
+        "16": "Foro Central Cível 22ª Vara Cível",
+        "166": "Foro de Cotia Vara do Juizado Especial Cível e Criminal",
+        "339": "Foro de Santos 9ª Vara Cível",
+        "324": "Foro de Santo André 5ª Vara Cível",
+        "336": "Foro de Santos 5ª Vara Cível",
+        "277": "Foro de Piracicaba 6ª Vara Cível",
+        "30": "Foro Central Cível 43ª Vara CÍvel",
+        "100": "Foro Regional XV - Butantã Vara do Juizado Especial Cível",
+        "123": "Foro de Assis 3ª Vara Cível",
+        "392": "Foro de Votuporanga 3ª Vara Cível",
+        "46": "Foro Regional I - Santana 9ª Vara Cível",
+        "350": "Foro de São Carlos 2ª Vara Cível",
+        "220": "Foro de Jaú Vara do Juizado Especial Cível e Criminal",
+        "192": "Foro de Guarujá 3ª Vara Cível",
+        "73": "Foro Regional V - São Miguel Paulista 3ª Vara Cível",
+        "67": "Foro Regional IV - Lapa 1ª Vara do Juizado Especial Cível",
+        "243": "Foro de Marília 5ª Vara Cível",
+        "343": "Foro de São Bernardo do Campo 2ª Vara Cível",
+        "49": "Foro Regional II - Santo Amaro 11ª Vara Cível",
+        "334": "Foro de Santos 2ª Vara do Juizado Especial Cível",
+        "143": "Foro de Botucatu 1ª Vara Cível",
+        "140": "Foro de Bebedouro Vara do Juizado Especial Cível e Criminal",
+        "259": "Foro de Osasco 2ª Vara Cível",
+        "114": "Foro de Araraquara 3ª Vara Cível",
+        "390": "Foro de Votuporanga 1ª Vara Cível",
+        "17": "Foro Central Cível 23ª Vara Cível",
+        "51": "Foro Regional II - Santo Amaro 13ª Vara Cível",
+        "55": "Foro Regional II - Santo Amaro 2ª Vara do Juizado Especial Cível",
+        "367": "Foro de São José dos Campos 2ª Vara Cível",
+        "126": "Foro de Avaré Vara do Juizado Especial Cível e Criminal",
+        "71": "Foro Regional V - São Miguel Paulista 1ª Vara Cível",
+        "7": "Foro Central - Fazenda Pública/Acidentes 9ª Vara de Fazenda Pública",
+        "15": "Foro Central Cível 20ª Vara Cível",
+        "196": "Foro de Guarulhos 1ª Vara do Juizado Especial Cível",
+        "28": "Foro Central Cível 41ª Vara Cível",
+        "275": "Foro de Piracicaba 4ª Vara Cível",
+        "226": "Foro de Jundiaí Vara do Juizado Especial Cível",
+        "305": "Foro de Ribeirão Preto 8ª Vara Cível",
+        "52": "Foro Regional II - Santo Amaro 14ª Vara Cível",
+        "180": "Foro de Fernandópolis 3ª Vara Cível",
+        "12": "Foro Central Cível 16ª Vara Cível",
+        "54": "Foro Regional II - Santo Amaro 1ª Vara do Juizado Especial Cível",
+        "125": "Foro de Avaré 1ª Vara Cível",
+        "187": "Foro de Guararapes Juizado Especial Cível e Criminal",
+        "206": "Foro de Indaiatuba 2ª Vara Cível",
+        "240": "Foro de Marília 2ª Vara Cível",
+        "36": "Foro Central Cível 9ª Vara Cível",
+        "33": "Foro Central Cível 4ª Vara Cível",
+        "295": "Foro de Presidente Prudente 3ª Vara Cível",
+        "271": "Foro de Piracicaba 1ª Vara Cível",
+        "363": "Foro de São José do Rio Preto 8ª Vara Cível",
+        "48": "Foro Regional II - Santo Amaro 10ª Vara Civel",
+        "369": "Foro de São José dos Campos 3ª Vara Cível",
+        "247": "Foro de Mauá Vara do Juizado Especial Cível e Criminal",
+        "267": "Foro de Penápolis Vara do Juizado Especial Cível e Criminal",
+        "40": "Foro Regional I - Santana 1ª Vara do Juizado Especial Cível",
+        "124": "Foro de Atibaia Vara do Juizado Especial Cível e Criminal",
+        "98": "Foro Regional XV - Butantã 2ª Vara Cível",
+        "85": "Foro Regional VIII - Tatuapé 1ª Vara Cível",
+        "81": "Foro Regional VII - Itaquera 2ª Vara Cível",
+        "178": "Foro de Fernandópolis 1ª Vara Cível",
+        "72": "Foro Regional V - São Miguel Paulista 2ª Vara Cível",
+        "1": "Foro Central - Fazenda Pública/Acidentes 13ª Vara de Fazenda Pública",
+        "116": "Foro de Araraquara Vara do Juizado Especial Cível",
+        "386": "Foro de Ubatuba Vara do Juizado Especial Cível e Criminal",
+        "335": "Foro de Santos 3ª Vara do Juizado Especial Cível",
+        "251": "Foro de Mirassol Juizado Especial Cível e Criminal",
+        "44": "Foro Regional I - Santana 6ª Vara Cível",
+        "79": "Foro Regional VI - Penha de França 3ª Vara Cível",
+        "69": "Foro Regional IX - Vila Prudente 2ª Vara Cível",
+        "39": "Foro Regional I - Santana 1ª Vara Cível",
+        "329": "Foro de Santos 11ª Vara Cível",
+        "145": "Foro de Botucatu 3ª Vara Cível",
+        "199": "Foro de Guarulhos 3ª Vara do Juizado Especial Cível",
+        "77": "Foro Regional VI - Penha de França 1ª Vara do Juizado Especial Cível",
+        "325": "Foro de Santo André 6ª Vara Cível",
+        "155": "Foro de Campinas 2ª Vara do Juizado Especial Cível",
+        "122": "Foro de Assis 2ª Vara Cível",
+        "338": "Foro de Santos 8ª Vara Cível",
+        "381": "Foro de Taubaté 1ª Vara Cível",
+        "88": "Foro Regional VIII - Tatuapé 4ª Vara Cível",
+        "82": "Foro Regional VII - Itaquera 4ª Vara Cível",
+        "356": "Foro de São José do Rio Preto 1ª Vara Cível",
+        "38": "Foro Central Juizados Especiais Cíveis 2ª Vara do Juizado Especial Cível - Vergueiro",
+        "132": "Foro de Barretos Vara do Juizado Especial Cível e Criminal",
+        "308": "Foro de Rio Claro 4ª Vara Cível",
+        "283": "Foro de Pontal Juizado Especial Cível e Criminal",
+        "311": "Foro de Salto Vara do Juizado Especial Cível e Criminal",
+        "18": "Foro Central Cível 25ª Vara Cível",
+        "309": "Foro de Salto 1ª Vara",
+        "290": "Foro de Praia Grande Vara do Juizado Especial Cível e Criminal",
+        "57": "Foro Regional II - Santo Amaro 4ª Vara Cível",
+        "383": "Foro de Taubaté 4ª Vara Cível",
+        "76": "Foro Regional VI - Penha de França 1ª Vara Cível",
+        "209": "Foro de Itapecerica da Serra Juizado Especial Cível e Criminal",
+        "351": "Foro de São Carlos 3ª Vara Cível",
+        "211": "Foro de Itu 2ª Vara Cível",
+        "198": "Foro de Guarulhos 2ª Vara do Juizado Especial Cível",
+        "276": "Foro de Piracicaba 5ª Vara Cível",
+        "152": "Foro de Cafelândia Juizado Especial Cível e Criminal",
+        "207": "Foro de Ipaussu Juizado Especial Cível e Criminal",
+        "354": "Foro de São Joaquim da Barra Juizado Especial Cível e Criminal",
+        "2": "Foro Central - Fazenda Pública/Acidentes 15ª Vara da Fazenda Pública",
+        "181": "Foro de Franca 1ª Vara Cível",
+        "257": "Foro de Nhandeara Vara Única",
+        "43": "Foro Regional I - Santana 5ª Vara Cível",
+        "293": "Foro de Presidente Prudente 1ª Vara Cível",
+        "359": "Foro de São José do Rio Preto 2ª Vara da Fazenda Pública",
+        "328": "Foro de Santos 10ª Vara Cível",
+        "326": "Foro de Santo André 7ª Vara Cível",
+        "70": "Foro Regional IX - Vila Prudente 3ª Vara Cível",
+        "327": "Foro de Santo André 9ª Vara Cível",
+        "108": "Foro de Amparo Juizado Especial Cível e Criminal",
+        "162": "Foro de Catanduva 1ª Vara Cível",
+        "245": "Foro de Matão Vara do Juizado Especial Cível e Criminal",
+        "222": "Foro de Jundiaí 2ª Vara Cível",
+        "35": "Foro Central Cível 6ª Vara Cível",
+        "110": "Foro de Andradina Vara do Juizado Especial Cível e Criminal",
+        "193": "Foro de Guarujá 4ª Vara Cível",
+        "172": "Foro de Diadema 4ª Vara Cível",
+        "371": "Foro de São José dos Campos 7ª Vara Cível",
+        "224": "Foro de Jundiaí 4ª Vara Cível",
+        "9": "Foro Central Cível 12ª Vara Cível",
+        "179": "Foro de Fernandópolis 2ª Vara Cível",
+        "332": "Foro de Santos 1ª Vara do Juizado Especial Cível",
+        "215": "Foro de Jales 1ª Vara Cível",
+        "262": "Foro de Osvaldo Cruz Juizado Especial Cível e Criminal",
+        "306": "Foro de Rio Claro 1ª Vara Cível",
+        "151": "Foro de Bragança Paulista Vara do Juizado Especial Cível e Criminal",
+        "99": "Foro Regional XV - Butantã 3ª Vara Cível",
+        "90": "Foro Regional X - Ipiranga 1ª Vara do Juizado Especial Cível",
+        "175": "Foro de Espírito Santo do Pinhal Juizado Especial Cível e Criminal",
+        "301": "Foro de Ribeirão Preto 4ª Vara Cível",
+        "20": "Foro Central Cível 31ª Vara Cível",
+        "165": "Foro de Cotia 3ª Vara Civel",
+        "41": "Foro Regional I - Santana 3ª Vara Cível",
+        "83": "Foro Regional VII - Itaquera 5ª Vara Cível",
+        "53": "Foro Regional II - Santo Amaro 1ª Vara Cível",
+        "135": "Foro de Barueri Vara do Juizado Especial Cível e Criminal",
+        "292": "Foro de Presidente Epitácio Juizado Especial Cível e Criminal",
+        "250": "Foro de Mirassol 1ª Vara",
+        "223": "Foro de Jundiaí 3ª Vara Cível",
+        "107": "Foro de Amparo 1ª Vara",
+        "137": "Foro de Bauru 2ª Vara Cível",
+        "118": "Foro de Araçatuba 1ª Vara Cível",
+        "300": "Foro de Ribeirão Preto 1ª Vara Cível",
+        "210": "Foro de Itapevi Juizado Especial Cível e Criminal",
+        "235": "Foro de Lins 2ª Vara Cível",
+        "266": "Foro de Penápolis 2ª Vara",
+        "376": "Foro de São Vicente 5ª Vara Cível",
+        "185": "Foro de Garça Juizado Especial Cível e Criminal",
+        "163": "Foro de Catanduva 3ª Vara Cível",
+        "297": "Foro de Presidente Venceslau Juizado Especial Cível",
+        "5": "Foro Central - Fazenda Pública/Acidentes 7ª Vara de Fazenda Pública",
+        "316": "Foro de Santa Fé do Sul 3ª Vara",
+        "323": "Foro de Santo André 4ª Vara Cível",
+        "218": "Foro de Jaú 1ª Vara Cível",
+        "241": "Foro de Marília 3ª Vara Cível",
+        "144": "Foro de Botucatu 2ª Vara Cível",
+        "119": "Foro de Araçatuba 5ª Vara Cível",
+        "385": "Foro de Tupã 2ª Vara Cível",
+        "340": "Foro de Sertãozinho Vara do Juizado Especial Cível e Criminal",
+        "321": "Foro de Santo André 1ª Vara Cível",
+        "27": "Foro Central Cível 3ª Vara Cível",
+        "353": "Foro de São Joaquim da Barra 2ª Vara",
+        "362": "Foro de São José do Rio Preto 6ª Vara Cível",
+        "87": "Foro Regional VIII - Tatuapé 2ª Vara Cível",
+        "310": "Foro de Salto 3ª Vara",
+        "270": "Foro de Pindamonhangaba Vara do Juizado Especial Cível e Criminal",
+        "312": "Foro de Santa Bárbara d'Oeste 1ª Vara Cível",
+        "264": "Foro de Palestina Juizado Especial Cível e Criminal",
+        "202": "Foro de Guarulhos 6ª Vara Cível",
+        "205": "Foro de Ibiúna Juizado Especial Cível e Criminal",
+        "66": "Foro Regional IV - Lapa 1ª Vara Cível",
+        "139": "Foro de Bauru 5ª Vara Cível",
+        "344": "Foro de São Bernardo do Campo 3ª Vara Cível",
+        "56": "Foro Regional II - Santo Amaro 3ª Vara Cível",
+        "307": "Foro de Rio Claro 3ª Vara Cível",
+        "194": "Foro de Guarujá Vara do Juizado Especial Cível e Criminal",
+        "188": "Foro de Guaratinguetá Vara do Juizado Especial Cível e Criminal",
+        "105": "Foro de Adamantina Juizado Especial Cível e Criminal",
+        "149": "Foro de Bragança Paulista 3ª Vara Cível",
+        "22": "Foro Central Cível 34ª Vara Cível",
+        "80": "Foro Regional VII - Itaquera 1ª Vara Cível",
+        "216": "Foro de Jales 2ª Vara Cível",
+        "177": "Foro de Estrela D'Oeste Juizado Especial Cível e Criminal",
+        "330": "Foro de Santos 12ª Vara Cível",
+        "314": "Foro de Santa Bárbara d'Oeste Vara do Juizado Especial Cível e Criminal",
+        "299": "Foro de Ribeirão Preto 10ª Vara Cível",
+        "50": "Foro Regional II - Santo Amaro 12ª Vara Cível",
+        "101": "Foro Regional de Vila Mimosa 3ª Vara",
+        "246": "Foro de Mauá 3ª Vara Cível",
+        "200": "Foro de Guarulhos 4ª Vara Cível",
+        "161": "Foro de Casa Branca Juizado Especial Cível e Criminal",
+        "248": "Foro de Miguelópolis Juizado Especial Cível e Criminal",
+        "91": "Foro Regional X - Ipiranga 2ª Vara Cível",
+        "236": "Foro de Lins 3ª Vara Cível",
+        "289": "Foro de Praia Grande 1ª Vara Cível",
+        "373": "Foro de São Vicente 1ª Vara Cível",
+        "164": "Foro de Catanduva Vara do Juizado Especial Cível",
+        "160": "Foro de Cardoso Vara Única",
+        "171": "Foro de Diadema 2ª Vara Cível",
+        "176": "Foro de Estrela D'Oeste 1ª Vara",
+        "89": "Foro Regional X - Ipiranga 1ª Vara Cível",
+        "225": "Foro de Jundiaí 6ª Vara Cível",
+        "97": "Foro Regional XV - Butantã 1ª Vara Cível",
+        "29": "Foro Central Cível 42ª Vara Cível",
+        "109": "Foro de Andradina 2ª Vara",
+        "352": "Foro de São Carlos Vara da Fazenda Pública",
+        "150": "Foro de Bragança Paulista 4ª Vara Cível",
+        "147": "Foro de Bragança Paulista 1ª Vara Cível",
+        "115": "Foro de Araraquara 6ª Vara Cível",
+        "379": "Foro de Taquaritinga 1ª Vara",
+        "278": "Foro de Piraju 1ª Vara",
+        "128": "Foro de Barra Bonita 2ª Vara",
+        "355": "Foro de São José do Rio Pardo Juizado Especial Cível",
+        "0": "Foro Central - Fazenda Pública/Acidentes 12ª Vara de Fazenda Pública",
+        "255": "Foro de Monte Aprazível 2ª Vara",
+        "284": "Foro de Porto Feliz 1ª Vara",
+        "159": "Foro de Carapicuíba Vara do Juizado Especial Cível e Criminal",
+        "317": "Foro de Santa Fé do Sul Vara do Juizado Especial Cível",
+        "349": "Foro de São Caetano do Sul Vara do Juizado Especial Cível",
+        "26": "Foro Central Cível 38ª Vara Cível",
+        "375": "Foro de São Vicente 4ª Vara Cível",
+        "104": "Foro de Adamantina 3ª Vara",
+        "318": "Foro de Santa Rita do Passa Quatro Juizado Especial Cível e Criminal",
+        "117": "Foro de Araras Vara do Juizado Especial Cível e Criminal",
+        "146": "Foro de Botucatu Vara do Juizado Especial Cível e Criminal",
+        "121": "Foro de Artur Nogueira Vara Única",
+        "127": "Foro de Barra Bonita 1ª Vara",
+        "133": "Foro de Barueri 6ª Vara Cível",
+        "380": "Foro de Tatuí 1ª Vara Cível",
+        "78": "Foro Regional VI - Penha de França 2ª Vara Cível",
+        "42": "Foro Regional I - Santana 4ª Vara Cível",
+        "360": "Foro de São José do Rio Preto 3ª Vara Cível",
+        "3": "Foro Central - Fazenda Pública/Acidentes 16ª Vara da Fazenda Pública",
+        "288": "Foro de Poá 1ª Vara Cível",
+        "157": "Foro de Campinas 7ª Vara Cível",
+        "382": "Foro de Taubaté 3ª Vara Cível",
+        "260": "Foro de Osasco 8ª Vara Cível",
+        "74": "Foro Regional V - São Miguel Paulista 4ª Vara Cível",
+        "228": "Foro de Leme Vara do Juizado Especial Cível e Criminal",
+        "341": "Foro de Sumaré 2ª Vara Cível",
+        "291": "Foro de Presidente Bernardes Vara Única",
+        "170": "Foro de Cândido Mota Juizado Especial Cível e Criminal",
+        "134": "Foro de Barueri Vara da Fazenda Pública",
+        "388": "Foro de Valparaíso 1ª Vara",
+        "227": "Foro de Leme 1ª Vara Cível",
+        "242": "Foro de Marília 4ª Vara Cível",
+        "45": "Foro Regional I - Santana 7ª Vara Cível",
+        "249": "Foro de Mirandópolis Juizado Especial Cível e Criminal",
+        "219": "Foro de Jaú 4ª Vara Cível",
+        "374": "Foro de São Vicente 2ª Vara Cível",
+        "34": "Foro Central Cível 5ª Vara Cível",
+        "280": "Foro de Pirassununga Juizado Especial Cível e Criminal",
+        "62": "Foro Regional II - Santo Amaro Juizado Especial Cível Anexo UNIP",
+        "333": "Foro de Santos 2ª Vara da Fazenda Pública",
+        "281": "Foro de Piratininga Vara Única",
+        "372": "Foro de São Sebastião 1ª Vara Cível",
+        "322": "Foro de Santo André 2ª Vara da Fazenda Pública",
+        "298": "Foro de Registro Vara do Juizado Especial Cível e Criminal",
+        "346": "Foro de São Bernardo do Campo 5ª Vara Cível",
+        "169": "Foro de Cubatão Vara do Juizado Especial Cível e Criminal",
+        "238": "Foro de Macatuba Vara Única",
+        "287": "Foro de Porto Ferreira Juizado Especial Cível e Criminal",
+        "303": "Foro de Ribeirão Preto 6ª Vara Cível",
+        "229": "Foro de Lençóis Paulista Juizado Especial Cível e Criminal",
+        "186": "Foro de Guararapes 2ª Vara",
+        "31": "Foro Central Cível 44ª Vara Cível",
+        "184": "Foro de Franco da Rocha Vara do Juizado Especial Cível e Criminal",
+        "315": "Foro de Santa Cruz do Rio Pardo Juizado Especial Cível",
+        "384": "Foro de Tietê 2ª Vara",
+        "141": "Foro de Bilac Juizado Especial Cível e Criminal",
+        "279": "Foro de Pirajuí 1ª Vara",
+        "68": "Foro Regional IX - Vila Prudente 1ª Vara Cível",
+        "256": "Foro de Monte Azul Paulista Juizado Especial Cível e Criminal",
+        "253": "Foro de Mogi das Cruzes Vara da Fazenda Pública",
+        "190": "Foro de Guarujá 1ª Vara Cível",
+        "174": "Foro de Dracena 3ª Vara",
+        "285": "Foro de Porto Ferreira 1ª Vara",
+        "203": "Foro de Guarulhos 8ª Vara Cível",
+        "313": "Foro de Santa Bárbara d'Oeste 3ª Vara Cível",
+        "103": "Foro Regional de Vila Mimosa 5ª Vara",
+        "337": "Foro de Santos 7ª Vara Cível",
+        "197": "Foro de Guarulhos 2ª Vara da Fazenda Pública",
+        "173": "Foro de Diadema Vara da Fazenda Pública",
+        "142": "Foro de Birigui Vara do Juizado Especial Cível e Criminal",
+        "75": "Foro Regional V - São Miguel Paulista Juizado Especial Cível - CIC Zona Leste",
+        "195": "Foro de Guarulhos 1ª Vara Cível",
+        "389": "Foro de Viradouro Vara Única",
+        "272": "Foro de Piracicaba 1ª Vara da Fazenda Pública",
+        "254": "Foro de Monte Aprazível 1ª Vara",
+        "286": "Foro de Porto Ferreira 2ª Vara",
+        "37": "Foro Central Juizados Especiais Cíveis 1ª Vara do Juizado Especial Cível - Vergueiro",
+        "167": "Foro de Cravinhos Juizado Especial Cível",
+        "378": "Foro de Taboão da Serra Vara do Juizado Especial Cível e Criminal",
+        "189": "Foro de Guariba 1ª Vara Judicial",
+        "261": "Foro de Osvaldo Cruz 1ª Vara",
+        "212": "Foro de Ituverava 2ª Vara",
+        "237": "Foro de Lins Vara do Juizado Especial Cível",
+        "201": "Foro de Guarulhos 5ª Vara Cível",
+        "365": "Foro de São José dos Campos 1ª Vara Cível",
+        "148": "Foro de Bragança Paulista 2ª Vara Cível",
+        "348": "Foro de São Bernardo do Campo Anexo do Juizado Especial Cível",
+        "191": "Foro de Guarujá 2ª Vara Cível",
+        "221": "Foro de José Bonifácio 2ª Vara",
+        "252": "Foro de Mogi das Cruzes 2ª Vara da Família e das Sucessões",
+        "387": "Foro de Urupês Vara Única",
+        "282": "Foro de Pontal 1ª Vara",
+        "268": "Foro de Peruíbe 2ª Vara",
+        "168": "Foro de Cubatão 2ª Vara",
+        "23": "Foro Central Cível 35ª Vara Cível",
+        "269": "Foro de Piedade Juizado Especial Cível",
+        "357": "Foro de São José do Rio Preto 1ª Vara da Fazenda Pública"
+    }
+}
