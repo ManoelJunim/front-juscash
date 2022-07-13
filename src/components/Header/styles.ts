@@ -1,8 +1,8 @@
 import { styled, Row } from '@nextui-org/react';
 
 const Container = styled(Row, {
-  backgroundColor: '#D9D9D9',
-  maxHeight: '10vh',
+  backgroundColor: '#F0F2F5',
+  maxHeight: '10v',
   padding: '$10',
 });
 
