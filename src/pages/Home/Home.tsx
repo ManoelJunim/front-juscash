@@ -1,68 +1,65 @@
-import React from 'react';
-import { Row, Col, Spacer, Text, Button, Grid } from '@nextui-org/react';
+import React, { useEffect, useState } from 'react';
+import {
+  Row,
+  Col,
+  Spacer,
+  Text,
+  Button,
+  Grid,
+  Loading,
+} from '@nextui-org/react';
 import {
   FormControl,
   InputLabel,
   MenuItem,
   Select,
-  SelectChangeEvent,
   TextField,
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 
 import { Header } from '../../components';
 import { withAuth } from '../../hocs';
 import * as S from './styles';
 import { IFieldsResquest } from '../../util/types';
+import { FormServices } from '../../services';
+import { IJuscashData } from '../../services/form/types';
+
 
 const HomeComponent = () => {
-  const [age, setAge] = React.useState('');
+  const [data, setData] = useState<IJuscashData|null>(null)
+  const [reu, setReu] = useState<string>('')
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
+  useEffect(() => {
+    
+    const getFormData = async () => {
+      const response = await FormServices.getData();
+      setData(response)
+    }
+  
+    getFormData().catch(console.error);
+  }, [])
 
-  const assunto_processo = {
-    '21': 'Outros',
-    '17': 'Liquidação / Cumprimento / Execução',
-    '15': 'Indenização por Dano Moral',
-    '6': 'DIREITO PROCESSUAL CIVIL E DO TRABALHO-Liquidação / Cumprimento / Execução-Obrigação de Fazer / Não Fazer',
-    '14': 'Indenização por Dano Material',
-    '30': 'Valor da Execução / Cálculo / Atualização',
-    '27': 'Rescisão do contrato e devolução do dinheiro',
-    '25': 'Prestação de Serviços',
-    '13': 'Inclusão Indevida em Cadastro de Inadimplentes',
-    '23': 'Perdas e Danos',
-    '0': 'Acidente de Trânsito',
-    '20': 'Obrigações',
-    '24': 'Planos de Saúde',
-    '5': 'Contratos Bancários',
-    '3': 'Compra e Venda',
-    '4': 'Constrição / Penhora / Avaliação / Indisponibilidade de Bens',
-    '18': 'Locação de Imóvel',
-    '29': 'Telefonia',
-    '11': 'Expurgos Inflacionários / Planos Econômicos',
-    '8': 'Defeito, nulidade ou anulação',
-    '10': 'Espécies de Contratos',
-    '26': 'Práticas Abusivas',
-    '22': 'Pagamento',
-    '2': 'Cheque',
-    '16': 'Interpretação / Revisão de Contrato',
-    '1': 'Bancários',
-    '28': 'Seguro',
-    '9': 'Despesas Condominiais',
-    '7': 'DIREITO PROCESSUAL CIVIL E DO TRABALHO-Partes e Procuradores-Sucumbência -Honorários Advocatícios',
-    '19': 'Nota Promissória',
-    '12': 'Inadimplemento',
-  };
+  const setClasse = (value: string) => {
+    setReu(value)
+    setFieldValue('reuAjustado', value)
+  }
+
+  useEffect(()=>{
+
+    const classe = data?.reu_ajustado.find((r)=> r.indice_reu === +values.reuAjustado )
+
+    classe?.classe.map((c)=> setFieldValue('classeReu', c.nome_classe))
+
+  },[reu])
 
   const {
     handleSubmit,
     errors,
     getFieldProps,
     isSubmitting,
-
+    resetForm,
     setFieldValue,
     values,
   } = useFormik<IFieldsResquest>({
@@ -87,144 +84,193 @@ const HomeComponent = () => {
       dataResposta: Yup.string().required('Campo Obrigatório'),
       dataConclusao: Yup.string().required('Campo Obrigatório'),
     }),
-    onSubmit: async () => {},
+    onSubmit: async () => {
+      toast.success('DEU TUDO CERTO FERA!');
+    },
   });
 
   return (
     <>
       <Header />
-      <S.Container>
-        <Grid xs={4}>
-          <Col>
-            <Row>
-              <FormControl fullWidth>
-                <InputLabel>Réu ajustado</InputLabel>
-                <Select
-                  value={values.reuAjustado}
-                  label="Réu ajustado"
-                  onChange={(e) => setFieldValue('reuAjustado', e.target.value)}
-                  size="small"
+      <form onSubmit={handleSubmit}>
+        <S.Container>
+          <Grid xs={4}>
+            <Col>
+              <Row>
+                  <FormControl fullWidth> 
+                  <InputLabel>Réu ajustado</InputLabel>
+                  <Select
+                    value={values.reuAjustado}
+                    label="Réu ajustado"
+                    onChange={(e) =>
+                      setClasse(e.target.value)
+                    }
+                    size="small"
+                    error={!!errors.reuAjustado}
+                  >
+                    {data?.reu_ajustado.map((n, index) => {
+                      return (
+                        <MenuItem key={index} value={n.indice_reu}>
+                          {n.nome}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
+              </Row>
+              <Spacer y={1.5} />
+              <Row>
+                <FormControl fullWidth>
+                  <InputLabel>Classe réu</InputLabel>
+                  <Select
+                    value={values.classeReu}
+                    label="Classe réu"
+                    onChange={(e) => setFieldValue('classeReu', e.target.value)}
+                    size="small"
+                    error={!!errors.classeReu}
+                  >
+                   <MenuItem  value={values.classeReu}>
+                          {values.classeReu}
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </Row>
+              <Spacer y={1.5} />
+              <Row>
+                <FormControl fullWidth>
+                  <InputLabel>Assunto do processo</InputLabel>
+                  <Select
+                    value={values.assuntoProcesso}
+                    label="Assunto do processo"
+                    onChange={(e) =>
+                      setFieldValue('assuntoProcesso', e.target.value)
+                    }
+                    size="small"
+                    error={!!errors.assuntoProcesso}
+                  >
+                    {data?.assunto_processo.map((a, index) => {
+                      return (
+                        <MenuItem key={index} value={a.indice_assunto}>
+                          {a.nome_assunto}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
+              </Row>
+              <Spacer y={1.5} />
+              <Row>
+                <FormControl fullWidth>
+                  <InputLabel>Unidade jurídica</InputLabel>
+                  <Select
+                    value={values.unidadeJuridica}
+                    label="Unidade jurídica"
+                    onChange={(e) =>
+                      setFieldValue('unidadeJuridica', e.target.value)
+                    }
+                    size="small"
+                    error={!!errors.unidadeJuridica}
+                  >
+                    {data?.unidade_judiciaria.map((n, index) => {
+                      return (
+                        <MenuItem key={index} value={n.indice_judiciaria}>
+                          {n.nome_unidade_judiciaria}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
+              </Row>
+              <Spacer y={1.5} />
+              <Row>
+                <Grid.Container alignItems="center" justify="flex-end">
+                  <Grid>
+                    <Text color="#7A7A7A">Data de início de sentença :</Text>
+                  </Grid>
+                  <Spacer />
+                  <Grid xs={4}>
+                    <TextField
+                      type="date"
+                      fullWidth
+                      size="small"
+                      {...getFieldProps('dataInicio')}
+                      error={!!errors.dataInicio}
+                      helperText={errors.dataInicio}
+                    />
+                  </Grid>
+                </Grid.Container>
+              </Row>
+              <Spacer y={1.5} />
+              <Row>
+                <Grid.Container alignItems="center" justify="flex-end">
+                  <Grid>
+                    <Text color="#7A7A7A"> Data de resposta :</Text>
+                  </Grid>
+                  <Spacer />
+                  <Grid xs={4}>
+                    <TextField
+                      type="date"
+                      fullWidth
+                      size="small"
+                      {...getFieldProps('dataResposta')}
+                      error={!!errors.dataResposta}
+                      helperText={errors.dataResposta}
+                    />
+                  </Grid>
+                </Grid.Container>
+              </Row>
+              <Spacer y={1.5} />
+              <Row>
+                <Grid.Container alignItems="center" justify="flex-end">
+                  <Grid>
+                    <Text color="#7A7A7A">
+                      Data de conclusão para a sentença :
+                    </Text>
+                  </Grid>
+                  <Spacer />
+                  <Grid xs={4}>
+                    <TextField
+                      type="date"
+                      fullWidth
+                      size="small"
+                      {...getFieldProps('dataConclusao')}
+                      error={!!errors.dataConclusao}
+                      helperText={errors.dataConclusao}
+                    />
+                  </Grid>
+                </Grid.Container>
+              </Row>
+              <Spacer y={1.5} />
+              <Row justify="space-between">
+                <Button
+                  size="sm"
+                  css={{ borderColor: '#023A51' }}
+                  bordered
+                  onPress={() => resetForm()}
                 >
-                  {Object.entries(assunto_processo).map((n, index) => {
-                    return (
-                      <MenuItem key={index} value={n[0]}>
-                        {n[1]}
-                      </MenuItem>
-                    );
-                  })}
-                </Select>
-              </FormControl>
-            </Row>
-            <Spacer y={1.5} />
-            <Row>
-              <FormControl fullWidth>
-                <InputLabel>Classe réu</InputLabel>
-                <Select
-                  value={age}
-                  label="Classe réu"
-                  onChange={handleChange}
-                  size="small"
+                  <Text color="#023A51">Limpar</Text>
+                </Button>
+                <Button
+                  size="sm"
+                  type="submit"
+                  css={{ backgroundColor: '#023A51' }}
                 >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
-            </Row>
-            <Spacer y={1.5} />
-            <Row>
-              <FormControl fullWidth>
-                <InputLabel>Assunto do processo</InputLabel>
-                <Select
-                  value={values.assuntoProcesso}
-                  label="Assunto do processo"
-                  onChange={(e) =>
-                    setFieldValue('assuntoProcesso', e.target.value)
-                  }
-                  size="small"
-                >
-                  {Object.entries(assunto_processo).map((n, index) => {
-                    return (
-                      <MenuItem key={index} value={n[0]}>
-                        {n[1]}
-                      </MenuItem>
-                    );
-                  })}
-                </Select>
-              </FormControl>
-            </Row>
-            <Spacer y={1.5} />
-            <Row>
-              <FormControl fullWidth>
-                <InputLabel>Unidade jurídica</InputLabel>
-                <Select
-                  value={age}
-                  label="Unidade jurídica"
-                  onChange={handleChange}
-                  size="small"
-                >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
-            </Row>
-            <Spacer y={1.5} />
-            <Row>
-              <Grid.Container alignItems="center" justify="flex-end">
-                <Grid>
-                  <Text color="#7A7A7A">Data de início de sentença :</Text>
-                </Grid>
-                <Spacer />
-                <Grid xs={4}>
-                  <TextField type="date" fullWidth size="small" />
-                </Grid>
-              </Grid.Container>
-            </Row>
-            <Spacer y={1.5} />
-            <Row>
-              <Grid.Container alignItems="center" justify="flex-end">
-                <Grid>
-                  <Text color="#7A7A7A"> Data de resposta :</Text>
-                </Grid>
-                <Spacer />
-                <Grid xs={4}>
-                  <TextField type="date" fullWidth size="small" />
-                </Grid>
-              </Grid.Container>
-            </Row>
-            <Spacer y={1.5} />
-            <Row>
-              <Grid.Container alignItems="center" justify="flex-end">
-                <Grid>
-                  <Text color="#7A7A7A">
-                    {' '}
-                    Data de conclusão para a sentença :
-                  </Text>
-                </Grid>
-                <Spacer />
-                <Grid xs={4}>
-                  <TextField type="date" fullWidth size="small" />
-                </Grid>
-              </Grid.Container>
-            </Row>
-            <Spacer y={1.5} />
-            <Row justify="space-between">
-              <Button size="sm" css={{ borderColor: '#023A51' }} bordered>
-                <Text color="#023A51">Limpar</Text>
-              </Button>
-              <Button size="sm" css={{ backgroundColor: '#023A51' }}>
-                <Text color="#fff"> Calcular</Text>
-              </Button>
-            </Row>
-          </Col>
-        </Grid>
-        <Grid xs={8}>
-          <Col>
-            <Row justify="center">TABELA</Row>
-          </Col>
-        </Grid>
-      </S.Container>
+                  {isSubmitting ? (
+                    <Loading />
+                  ) : (
+                    <Text color="#fff"> Calcular</Text>
+                  )}
+                </Button>
+              </Row>
+            </Col>
+          </Grid>
+          <Grid xs={8}>
+            <Col>
+              <Row justify="center">Resultado e dados inlustrativos</Row>
+            </Col>
+          </Grid>
+        </S.Container>
+      </form>
     </>
   );
 };
