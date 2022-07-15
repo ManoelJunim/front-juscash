@@ -14,6 +14,7 @@ import {
   MenuItem,
   Select,
   TextField,
+  Typography,
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -24,33 +25,44 @@ import { withAuth } from '../../hocs';
 import * as S from './styles';
 import { IFieldsResquest } from '../../util/types';
 import { FormServices } from '../../services';
-import { IJuscashData } from '../../services/form/types';
+import {  IJuscashData, IReuAjustado } from '../../services/form/types';
 
 
 const HomeComponent = () => {
   const [data, setData] = useState<IJuscashData|null>(null)
   const [reu, setReu] = useState<string>('')
+  const [classe, setClasse] = useState<IReuAjustado | undefined>()
 
   useEffect(() => {
     
     const getFormData = async () => {
       const response = await FormServices.getData();
       setData(response)
+      console.log(response)
     }
   
     getFormData().catch(console.error);
   }, [])
 
-  const setClasse = (value: string) => {
+  const handleClasse = (value: string) => {
     setReu(value)
     setFieldValue('reuAjustado', value)
   }
 
   useEffect(()=>{
 
-    const classe = data?.reu_ajustado.find((r)=> r.indice_reu === +values.reuAjustado )
+    if( +values.reuAjustado === 40){
+      const response = data?.reu_ajustado.find((r)=> r.indice_reu === +values.reuAjustado )
 
-    classe?.classe.map((c)=> setFieldValue('classeReu', c.nome_classe))
+      setClasse(response)
+    }
+    else{
+    const response = data?.reu_ajustado.find((r)=> r.indice_reu === +values.reuAjustado )
+
+    setClasse(response)
+
+    // response?.classe.map((c)=> setFieldValue('classeReu', c.nome_classe))
+  }
 
   },[reu])
 
@@ -94,7 +106,7 @@ const HomeComponent = () => {
       <Header />
       <form onSubmit={handleSubmit}>
         <S.Container>
-          <Grid xs={4}>
+          <Grid xs={12} sm={4}>
             <Col>
               <Row>
                   <FormControl fullWidth> 
@@ -103,7 +115,7 @@ const HomeComponent = () => {
                     value={values.reuAjustado}
                     label="Réu ajustado"
                     onChange={(e) =>
-                      setClasse(e.target.value)
+                      handleClasse(e.target.value)
                     }
                     size="small"
                     error={!!errors.reuAjustado}
@@ -111,7 +123,7 @@ const HomeComponent = () => {
                     {data?.reu_ajustado.map((n, index) => {
                       return (
                         <MenuItem key={index} value={n.indice_reu}>
-                          {n.nome}
+                        <Typography variant='body2'>{n.nome}</Typography>  
                         </MenuItem>
                       );
                     })}
@@ -129,9 +141,11 @@ const HomeComponent = () => {
                     size="small"
                     error={!!errors.classeReu}
                   >
-                   <MenuItem  value={values.classeReu}>
-                          {values.classeReu}
-                    </MenuItem>
+                   {classe?.classe.map((c,index)=>{
+                    return(<MenuItem  key={index} value={c.classe_id}>
+                    <Typography variant='body2'> {c.nome_classe}</Typography>
+                     </MenuItem>)
+                   })}
                   </Select>
                 </FormControl>
               </Row>
@@ -151,7 +165,7 @@ const HomeComponent = () => {
                     {data?.assunto_processo.map((a, index) => {
                       return (
                         <MenuItem key={index} value={a.indice_assunto}>
-                          {a.nome_assunto}
+                        <Typography variant='body2'>  {a.nome_assunto} </Typography>
                         </MenuItem>
                       );
                     })}
@@ -161,10 +175,10 @@ const HomeComponent = () => {
               <Spacer y={1.5} />
               <Row>
                 <FormControl fullWidth>
-                  <InputLabel>Unidade jurídica</InputLabel>
+                  <InputLabel>Unidade judiciaria</InputLabel>
                   <Select
                     value={values.unidadeJuridica}
-                    label="Unidade jurídica"
+                    label="Unidade judiciaria"
                     onChange={(e) =>
                       setFieldValue('unidadeJuridica', e.target.value)
                     }
@@ -174,7 +188,7 @@ const HomeComponent = () => {
                     {data?.unidade_judiciaria.map((n, index) => {
                       return (
                         <MenuItem key={index} value={n.indice_judiciaria}>
-                          {n.nome_unidade_judiciaria}
+                        <Typography variant='body2'>  {n.nome_unidade_judiciaria}</Typography>
                         </MenuItem>
                       );
                     })}
@@ -264,9 +278,9 @@ const HomeComponent = () => {
               </Row>
             </Col>
           </Grid>
-          <Grid xs={8}>
+          <Grid xs={12} sm={8}>
             <Col>
-              <Row justify="center">Resultado e dados inlustrativos</Row>
+              <Row justify="center">Resultado e dados ilustrativos</Row>
             </Col>
           </Grid>
         </S.Container>

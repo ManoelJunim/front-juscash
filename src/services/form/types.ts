@@ -16,9 +16,9 @@ export interface IJuscashData {
   }
   
   export interface IClasse {
-    classe_id?:     number;
+    classe_id:     number;
     nome_classe:    string;
-    indice_classe?: number;
+   
   }
   
   export interface IUnidadeJudiciaria {
