@@ -208,7 +208,7 @@ const HomeComponent = () => {
               <Row>
                 <Grid.Container alignItems="center" justify="flex-end">
                   <Grid>
-                    <Text color="#7A7A7A">Data de início de sentença :</Text>
+                    <Text color="#7A7A7A">Data início de cumprimento :</Text>
                   </Grid>
                   <Spacer />
                   <Grid xs={4}>
@@ -247,7 +247,7 @@ const HomeComponent = () => {
                 <Grid.Container alignItems="center" justify="flex-end">
                   <Grid>
                     <Text color="#7A7A7A">
-                      Data de conclusão para a sentença :
+                      Data conclusão para a sentença :
                     </Text>
                   </Grid>
                   <Spacer />
