@@ -33,13 +33,19 @@ const HomeComponent = () => {
   const [reu, setReu] = useState<string>('')
   const [classe, setClasse] = useState<IReuAjustado | undefined>()
   const [prediction, setPrediction] = useState<number>(0)
+  const [loading, setLoading] = useState<boolean>(true)
+
+  const clearFields = () => {
+    resetForm()
+    setPrediction(0)
+  }
 
   useEffect(() => {
-    
+    setLoading(true)
     const getFormData = async () => {
       const response = await FormServices.getData();
       setData(response)
-      console.log(response)
+      setLoading(false)
     }
   
     getFormData().catch(console.error);
@@ -52,18 +58,12 @@ const HomeComponent = () => {
 
   useEffect(()=>{
 
-    if( +values.reuAjustado === 40){
+    
       const response = data?.reu_ajustado.find((r)=> r.indice_reu === +values.reuAjustado )
 
       setClasse(response)
-    }
-    else{
-    const response = data?.reu_ajustado.find((r)=> r.indice_reu === +values.reuAjustado )
 
-    setClasse(response)
-
-    // response?.classe.map((c)=> setFieldValue('classeReu', c.nome_classe))
-  }
+ 
 
   },[reu])
 
@@ -130,9 +130,10 @@ const HomeComponent = () => {
                   >
                     {data?.reu_ajustado.map((n, index) => {
                       return (
-                        <MenuItem key={index} value={n.indice_reu}>
+                        loading? <Loading/>:  <MenuItem key={index} value={n.indice_reu}>
                         <Typography variant='body2'>{n.nome}</Typography>  
                         </MenuItem>
+                        
                       );
                     })}
                   </Select>
@@ -268,7 +269,7 @@ const HomeComponent = () => {
                   size="sm"
                   css={{ borderColor: '#023A51' }}
                   bordered
-                  onPress={() => resetForm()}
+                  onPress={() => clearFields()}
                 >
                   <Text color="#023A51">Limpar</Text>
                 </Button>
