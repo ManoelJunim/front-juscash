@@ -25,3 +25,13 @@ export interface IJuscashData {
     indice_judiciaria:       number;
     nome_unidade_judiciaria: string;
   }
+
+  export interface IPayloadPrediction{
+    assuntoProcesso : string;
+    classeReu : string;
+    dataConclusao : string,
+    dataInicio : string,
+    dataResposta : string,
+    reuAjustado : string;
+    unidadeJuridica :string;
+  }

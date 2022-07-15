@@ -24,7 +24,7 @@ import { Header } from '../../components';
 import { withAuth } from '../../hocs';
 import * as S from './styles';
 import { IFieldsResquest } from '../../util/types';
-import { FormServices } from '../../services';
+import {  FormServices } from '../../services';
 import {  IJuscashData, IReuAjustado } from '../../services/form/types';
 
 
@@ -32,6 +32,7 @@ const HomeComponent = () => {
   const [data, setData] = useState<IJuscashData|null>(null)
   const [reu, setReu] = useState<string>('')
   const [classe, setClasse] = useState<IReuAjustado | undefined>()
+  const [prediction, setPrediction] = useState<number>(0)
 
   useEffect(() => {
     
@@ -97,7 +98,14 @@ const HomeComponent = () => {
       dataConclusao: Yup.string().required('Campo Obrigatório'),
     }),
     onSubmit: async () => {
-      toast.success('DEU TUDO CERTO FERA!');
+      try {
+        const response = await FormServices.getPrediction(values)
+     setPrediction(response)
+     toast.success('Predição concluída! 🚀')
+      } catch (error: any) {
+        toast.error(error)
+      }
+     
     },
   });
 
@@ -280,7 +288,9 @@ const HomeComponent = () => {
           </Grid>
           <Grid xs={12} sm={8}>
             <Col>
-              <Row justify="center">Resultado e dados ilustrativos</Row>
+              <Row justify="center" align='center'>
+                <Text b h4> Resultado: </Text> <Spacer/><Text > {prediction} meses </Text>
+              </Row>
             </Col>
           </Grid>
         </S.Container>
