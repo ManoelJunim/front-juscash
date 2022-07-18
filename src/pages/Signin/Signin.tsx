@@ -49,12 +49,14 @@ const Signin = () => {
         CryptoJs.MD5(values.login).toString() ===
           'e3afed0047b08059d0fada10f400c1e5'
       ) {
-        setAuth(true);
-        navitega('/');
-        setLoading(false);
+        setTimeout(()=>{ setAuth(true);
+          navitega('/');
+          setLoading(false);}, 3000 )
+        
       } else {
         toast.error('Senha inválida!');
-        setLoading(false);
+        setTimeout(()=>{setLoading(false);}, 3000)
+        
       }
     },
   });
@@ -112,9 +114,10 @@ const Signin = () => {
               css={{ width: '100%', backgroundColor: `${colors.seconday}` }}
               iconRight={<MdLogin fontSize={20} />}
               type="submit"
+              
             >
               <Text size={18} color={colors.white}>
-                {loading ? <Loading /> : 'Entrar'}
+                {loading ? <Loading size='sm'/> : 'Entrar'}
               </Text>
             </Button>
           </Grid>
