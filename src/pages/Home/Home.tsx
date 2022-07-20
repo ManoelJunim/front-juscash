@@ -54,7 +54,7 @@ const HomeComponent = () => {
   };
 
   const handleClasse = (value: string) => {
-    setReu(value);
+    setReu( value);
     setFieldValue('reuAjustado', value);
   };
 
@@ -316,7 +316,7 @@ const HomeComponent = () => {
               <Row justify="center" align="center">
                 <Text b h4>
                   {' '}
-                  Tempo previsto de duração total do processo:{' '}
+                   Previssão de duração total do processo:{' '}
                 </Text>{' '}
                 <Spacer />
                 <Text> {prediction} meses </Text>
