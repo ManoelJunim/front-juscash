@@ -34,4 +34,5 @@ export interface IJuscashData {
     dataResposta : string,
     reuAjustado : string;
     unidadeJuridica :string;
+    numProcesso: string;
   }

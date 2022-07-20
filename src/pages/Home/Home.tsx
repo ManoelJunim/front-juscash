@@ -19,53 +19,62 @@ import {
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
+import {ReactInputMask} from 'react-input-mask';
+import { addMonths, format, formatDistanceStrict  } from 'date-fns'
+
 
 import { Header } from '../../components';
 import { withAuth } from '../../hocs';
 import * as S from './styles';
 import { IFieldsResquest } from '../../util/types';
-import {  FormServices } from '../../services';
-import {  IJuscashData, IReuAjustado } from '../../services/form/types';
-
+import { FormServices } from '../../services';
+import { IJuscashData, IReuAjustado } from '../../services/form/types';
+import { ptBR } from 'date-fns/locale';
 
 const HomeComponent = () => {
-  const [data, setData] = useState<IJuscashData|null>(null)
-  const [reu, setReu] = useState<string>('')
-  const [classe, setClasse] = useState<IReuAjustado | undefined>()
-  const [prediction, setPrediction] = useState<number>(0)
-  const [loading, setLoading] = useState<boolean>(true)
+  const [data, setData] = useState<IJuscashData | null>(null);
+  const [reu, setReu] = useState<string>('');
+  const [classe, setClasse] = useState<IReuAjustado | undefined>();
+  const [prediction, setPrediction] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [timeLeft, setTimeLeft] = useState<string>('');
+  const [ finalTime, setFinalTime] = useState<Date>(new Date())
+
+  const setResult = (response : number) => {
+    setPrediction(response);
+    setFinalTime( addMonths(new Date(values.dataInicio.split('-').join(',')), response))
+    setTimeLeft( formatDistanceStrict(  new Date() ,addMonths(new Date(values.dataInicio.split('-').join(',')), response) ,{unit:'month', locale:ptBR } )   )
+  }
 
   const clearFields = () => {
-    resetForm()
-    setPrediction(0)
-  }
-
-  useEffect(() => {
-    setLoading(true)
-    const getFormData = async () => {
-      const response = await FormServices.getData();
-      setData(response)
-      setLoading(false)
-    }
-  
-    getFormData().catch(console.error);
-  }, [])
+    resetForm();
+    setPrediction(0);
+    setFinalTime(new Date())
+    setTimeLeft('0 meses')
+  };
 
   const handleClasse = (value: string) => {
-    setReu(value)
-    setFieldValue('reuAjustado', value)
-  }
+    setReu(value);
+    setFieldValue('reuAjustado', value);
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
+    setLoading(true);
+    const getFormData = async () => {
+      const response = await FormServices.getData();
+      setData(response);
+      setLoading(false);
+    };
 
-    
-      const response = data?.reu_ajustado.find((r)=> r.indice_reu === +values.reuAjustado )
+    getFormData().catch(console.error);
+  }, []);
 
-      setClasse(response)
-
- 
-
-  },[reu])
+  useEffect(() => {
+    const response = data?.reu_ajustado.find(
+      (r) => r.indice_reu === +values.reuAjustado
+    );
+    setClasse(response);
+  }, [reu]);
 
   const {
     handleSubmit,
@@ -84,6 +93,7 @@ const HomeComponent = () => {
       dataInicio: '',
       dataResposta: '',
       dataConclusao: '',
+      numProcesso: '',
     },
     validateOnBlur: false,
     validateOnChange: false,
@@ -95,17 +105,17 @@ const HomeComponent = () => {
       unidadeJuridica: Yup.string().required('Campo Obrigatório'),
       dataInicio: Yup.string().required('Campo Obrigatório'),
       dataResposta: Yup.string().required('Campo Obrigatório'),
-      dataConclusao: Yup.string().required('Campo Obrigatório'),
+      dataConclusao: Yup.string(),
+      numProcesso: Yup.string().min(20, 'Número de processo inválido.'),
     }),
     onSubmit: async () => {
       try {
-        const response = await FormServices.getPrediction(values)
-     setPrediction(response)
-     toast.success('Predição concluída! 🚀')
+        const response = await FormServices.getPrediction(values);
+        setResult(response)  
+        toast.success('Predição concluída! 🚀');
       } catch (error: any) {
-        toast.error(error)
+        toast.error(error);
       }
-     
     },
   });
 
@@ -116,30 +126,33 @@ const HomeComponent = () => {
         <S.Container>
           <Grid xs={12} sm={4}>
             <Col>
+              <Row>            
+              <TextField label='Número de processo' fullWidth size='small'/>    
+              </Row>
+              <Spacer y={1} />
               <Row>
-                  <FormControl fullWidth> 
+                <FormControl fullWidth>
                   <InputLabel>Réu ajustado</InputLabel>
                   <Select
                     value={values.reuAjustado}
                     label="Réu ajustado"
-                    onChange={(e) =>
-                      handleClasse(e.target.value)
-                    }
+                    onChange={(e) => handleClasse(e.target.value)}
                     size="small"
                     error={!!errors.reuAjustado}
                   >
                     {data?.reu_ajustado.map((n, index) => {
-                      return (
-                        loading? <Loading/>:  <MenuItem key={index} value={n.indice_reu}>
-                        <Typography variant='body2'>{n.nome}</Typography>  
+                      return loading ? (
+                        <Loading />
+                      ) : (
+                        <MenuItem key={index} value={n.indice_reu}>
+                          <Typography variant="body2">{n.nome}</Typography>
                         </MenuItem>
-                        
                       );
                     })}
                   </Select>
                 </FormControl>
               </Row>
-              <Spacer y={1.5} />
+              <Spacer y={1} />
               <Row>
                 <FormControl fullWidth>
                   <InputLabel>Classe réu</InputLabel>
@@ -150,15 +163,20 @@ const HomeComponent = () => {
                     size="small"
                     error={!!errors.classeReu}
                   >
-                   {classe?.classe.map((c,index)=>{
-                    return(<MenuItem  key={index} value={c.classe_id}>
-                    <Typography variant='body2'> {c.nome_classe}</Typography>
-                     </MenuItem>)
-                   })}
+                    {classe?.classe.map((c, index) => {
+                      return (
+                        <MenuItem key={index} value={c.classe_id}>
+                          <Typography variant="body2">
+                            {' '}
+                            {c.nome_classe}
+                          </Typography>
+                        </MenuItem>
+                      );
+                    })}
                   </Select>
                 </FormControl>
               </Row>
-              <Spacer y={1.5} />
+              <Spacer y={1} />
               <Row>
                 <FormControl fullWidth>
                   <InputLabel>Assunto do processo</InputLabel>
@@ -174,14 +192,17 @@ const HomeComponent = () => {
                     {data?.assunto_processo.map((a, index) => {
                       return (
                         <MenuItem key={index} value={a.indice_assunto}>
-                        <Typography variant='body2'>  {a.nome_assunto} </Typography>
+                          <Typography variant="body2">
+                            {' '}
+                            {a.nome_assunto}{' '}
+                          </Typography>
                         </MenuItem>
                       );
                     })}
                   </Select>
                 </FormControl>
               </Row>
-              <Spacer y={1.5} />
+              <Spacer y={1} />
               <Row>
                 <FormControl fullWidth>
                   <InputLabel>Unidade judiciaria</InputLabel>
@@ -197,14 +218,17 @@ const HomeComponent = () => {
                     {data?.unidade_judiciaria.map((n, index) => {
                       return (
                         <MenuItem key={index} value={n.indice_judiciaria}>
-                        <Typography variant='body2'>  {n.nome_unidade_judiciaria}</Typography>
+                          <Typography variant="body2">
+                            {' '}
+                            {n.nome_unidade_judiciaria}
+                          </Typography>
                         </MenuItem>
                       );
                     })}
                   </Select>
                 </FormControl>
               </Row>
-              <Spacer y={1.5} />
+              <Spacer y={1} />
               <Row>
                 <Grid.Container alignItems="center" justify="flex-end">
                   <Grid>
@@ -223,7 +247,7 @@ const HomeComponent = () => {
                   </Grid>
                 </Grid.Container>
               </Row>
-              <Spacer y={1.5} />
+              <Spacer y={1} />
               <Row>
                 <Grid.Container alignItems="center" justify="flex-end">
                   <Grid>
@@ -242,7 +266,7 @@ const HomeComponent = () => {
                   </Grid>
                 </Grid.Container>
               </Row>
-              <Spacer y={1.5} />
+              <Spacer y={1} />
               <Row>
                 <Grid.Container alignItems="center" justify="flex-end">
                   <Grid>
@@ -263,7 +287,7 @@ const HomeComponent = () => {
                   </Grid>
                 </Grid.Container>
               </Row>
-              <Spacer y={1.5} />
+              <Spacer y={1} />
               <Row justify="space-between">
                 <Button
                   size="sm"
@@ -289,8 +313,29 @@ const HomeComponent = () => {
           </Grid>
           <Grid xs={12} sm={8}>
             <Col>
-              <Row justify="center" align='center'>
-                <Text b h4> Resultado: </Text> <Spacer/><Text > {prediction} meses </Text>
+              <Row justify="center" align="center">
+                <Text b h4>
+                  {' '}
+                  Tempo previsto de duração total do processo:{' '}
+                </Text>{' '}
+                <Spacer />
+                <Text> {prediction} meses </Text>
+              </Row>
+              <Row justify="center" align="center">
+                <Text b h4>
+                  {' '}
+                  Tempo restante até a data final do processo:{' '}
+                </Text>{' '}
+                <Spacer />
+                <Text> {timeLeft} </Text>
+              </Row>
+              <Row justify="center" align="center">
+                <Text b h4>
+                  {' '}
+                  Data de previsão para finalização do processo:{' '}
+                </Text>{' '}
+                <Spacer />
+                <Text> {format(finalTime, "dd/MM/yyyy")}  </Text>
               </Row>
             </Col>
           </Grid>

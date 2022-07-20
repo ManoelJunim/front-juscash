@@ -6,6 +6,7 @@ export interface IFieldsResquest {
   dataInicio: string;
   dataResposta: string;
   dataConclusao: string;
+  numProcesso: string;
 }
 
 
