@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import {
   Row,
   Col,
@@ -20,23 +20,21 @@ import {
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
-import {ReactInputMask} from 'react-input-mask';
 import { addMonths, format, formatDistanceStrict  } from 'date-fns'
+import { ptBR } from 'date-fns/locale';
+import ReactInputMask from 'react-input-mask';
 
-
+import * as S from './styles';
 import { Header } from '../../components';
 import { withAuth } from '../../hocs';
-import * as S from './styles';
 import { IFieldsResquest } from '../../util/types';
 import { FormServices } from '../../services';
 import { IJuscashData, IReuAjustado } from '../../services/form/types';
-import { ptBR } from 'date-fns/locale';
 
 const HomeComponent = () => {
   const [data, setData] = useState<IJuscashData | null>(null);
   const [reu, setReu] = useState<string>('');
   const [classe, setClasse] = useState<IReuAjustado | undefined>();
-  const [loading, setLoading] = useState<boolean>(true);
   const [prediction, setPrediction] = useState<number>(0);
   const [timeLeft, setTimeLeft] = useState<string>('');
   const [ finalTime, setFinalTime] = useState<Date>(new Date())
@@ -63,11 +61,11 @@ const HomeComponent = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
+   
     const getFormData = async () => {
       const response = await FormServices.getData();
       setData(response);
-      setLoading(false);
+     
     };
 
     getFormData().catch(console.error);
@@ -130,8 +128,16 @@ const HomeComponent = () => {
         <S.Container>
           <Grid xs={12} sm={4}>
             <Col>
-              <Row>            
-              <TextField label='Número de processo' fullWidth size='small' {...getFieldProps('numProcesso')} error={!!errors.numProcesso} helperText={errors.numProcesso}/>    
+              <Row>    
+                      
+                <TextField
+               label='Número de processo'
+                fullWidth size='small'
+                {...getFieldProps('numProcesso')}
+                  error={!!errors.numProcesso}
+                   helperText={errors.numProcesso}/>
+               
+             
               </Row>
               <Spacer y={1} />
               <Row>
@@ -145,9 +151,7 @@ const HomeComponent = () => {
                     error={!!errors.reuAjustado}
                   >
                     {data?.reu_ajustado.map((n, index) => {
-                      return loading ? (
-                        <Loading />
-                      ) : (
+                      return  (
                         <MenuItem key={index} value={n.indice_reu}>
                           <Typography variant="body2">{n.nome}</Typography>
                         </MenuItem>
@@ -317,30 +321,47 @@ const HomeComponent = () => {
           </Grid>
           <Grid xs={12} sm={8} style={{ marginLeft: 15}}>
             <Col >
-              <Row justify="space-between" align="center">
+              <Row align="center">
+                <Col>
                 <Typography variant='body1' color='#7A7A7A'>
-                   Previsão de duração total do processo
-                   </Typography>
+                  Previsão de duração total do processo
+                </Typography>
+                </Col>
+                <Col>
+                <Row justify='center'>
                 <Text b> {visible? `${prediction} meses` : ''} </Text>
+                </Row>
+                </Col>
               </Row>
               <Divider />
               <Spacer y={0.5}/>
-              <Row justify="space-between" align="center">
-              <Typography variant='body1'color='#7A7A7A'>
-                  
+              <Row align="center">
+                <Col>
+              <Typography variant='body1'color='#7A7A7A'>  
                   Tempo restante até a data final do processo
-                  </Typography>
-                <Text b> {visible? timeLeft : ''} </Text>
+              </Typography>
+              </Col>
+              <Col>
+              <Row justify='center'>
+              <Text b> {visible? ( finalTime < new Date()? ' 0 meses '  : timeLeft   ) : ''} </Text>
+              </Row>
+              </Col>
+                
               </Row>
               <Divider />
               <Spacer y={0.5}/>
-              <Row justify="space-between" align="center">
+              <Row align="center">
+                < Col>
               <Typography variant='body1' color='#7A7A7A'>
                   
                   Data para finalização do processo
                 </Typography>
-                
-                <Text b> {visible? format(finalTime, "dd/MM/yyyy"): ''}  </Text>
+                </Col>
+                <Col>
+              <Row justify='center'>
+              <Text b> {visible? format(finalTime, "dd/MM/yyyy"): ''}  </Text>
+              </Row>
+              </Col>
               </Row>
               <Divider />
             </Col>
