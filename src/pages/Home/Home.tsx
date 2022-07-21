@@ -131,7 +131,7 @@ const HomeComponent = () => {
           <Grid xs={12} sm={4}>
             <Col>
               <Row>            
-              <TextField label='Número de processo' fullWidth size='small' {...getFieldProps('numProcesso')}/>    
+              <TextField label='Número de processo' fullWidth size='small' {...getFieldProps('numProcesso')} error={!!errors.numProcesso} helperText={errors.numProcesso}/>    
               </Row>
               <Spacer y={1} />
               <Row>
@@ -318,7 +318,7 @@ const HomeComponent = () => {
           <Grid xs={12} sm={8} style={{ marginLeft: 15}}>
             <Col >
               <Row justify="space-between" align="center">
-                <Typography variant='body1'>
+                <Typography variant='body1' color='#7A7A7A'>
                    Previsão de duração total do processo
                    </Typography>
                 <Text b> {visible? `${prediction} meses` : ''} </Text>
@@ -326,7 +326,7 @@ const HomeComponent = () => {
               <Divider />
               <Spacer y={0.5}/>
               <Row justify="space-between" align="center">
-              <Typography variant='body1'>
+              <Typography variant='body1'color='#7A7A7A'>
                   
                   Tempo restante até a data final do processo
                   </Typography>
@@ -335,7 +335,7 @@ const HomeComponent = () => {
               <Divider />
               <Spacer y={0.5}/>
               <Row justify="space-between" align="center">
-              <Typography variant='body1'>
+              <Typography variant='body1' color='#7A7A7A'>
                   
                   Data para finalização do processo
                 </Typography>
