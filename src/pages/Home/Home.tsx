@@ -15,6 +15,7 @@ import {
   Select,
   TextField,
   Typography,
+  Divider
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -35,15 +36,17 @@ const HomeComponent = () => {
   const [data, setData] = useState<IJuscashData | null>(null);
   const [reu, setReu] = useState<string>('');
   const [classe, setClasse] = useState<IReuAjustado | undefined>();
-  const [prediction, setPrediction] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
+  const [prediction, setPrediction] = useState<number>(0);
   const [timeLeft, setTimeLeft] = useState<string>('');
   const [ finalTime, setFinalTime] = useState<Date>(new Date())
+  const [visible, setVisible] = useState<boolean>(false)
 
   const setResult = (response : number) => {
     setPrediction(response);
     setFinalTime( addMonths(new Date(values.dataInicio.split('-').join(',')), response))
     setTimeLeft( formatDistanceStrict(  new Date() ,addMonths(new Date(values.dataInicio.split('-').join(',')), response) ,{unit:'month', locale:ptBR } )   )
+    setVisible(true)
   }
 
   const clearFields = () => {
@@ -51,6 +54,7 @@ const HomeComponent = () => {
     setPrediction(0);
     setFinalTime(new Date())
     setTimeLeft('0 meses')
+    setVisible(false)
   };
 
   const handleClasse = (value: string) => {
@@ -311,32 +315,34 @@ const HomeComponent = () => {
               </Row>
             </Col>
           </Grid>
-          <Grid xs={12} sm={8}>
-            <Col>
-              <Row justify="center" align="center">
-                <Text b h4>
-                  {' '}
-                   Previssão de duração total do processo:{' '}
-                </Text>{' '}
-                <Spacer />
-                <Text> {prediction} meses </Text>
+          <Grid xs={12} sm={8} style={{ marginLeft: 15}}>
+            <Col >
+              <Row justify="space-between" align="center">
+                <Typography variant='body1'>
+                   Previsão de duração total do processo
+                   </Typography>
+                <Text b> {visible? `${prediction} meses` : ''} </Text>
               </Row>
-              <Row justify="center" align="center">
-                <Text b h4>
-                  {' '}
-                  Tempo restante até a data final do processo:{' '}
-                </Text>{' '}
-                <Spacer />
-                <Text> {timeLeft} </Text>
+              <Divider />
+              <Spacer y={0.5}/>
+              <Row justify="space-between" align="center">
+              <Typography variant='body1'>
+                  
+                  Tempo restante até a data final do processo
+                  </Typography>
+                <Text b> {visible? timeLeft : ''} </Text>
               </Row>
-              <Row justify="center" align="center">
-                <Text b h4>
-                  {' '}
-                  Data de previsão para finalização do processo:{' '}
-                </Text>{' '}
-                <Spacer />
-                <Text> {format(finalTime, "dd/MM/yyyy")}  </Text>
+              <Divider />
+              <Spacer y={0.5}/>
+              <Row justify="space-between" align="center">
+              <Typography variant='body1'>
+                  
+                  Data para finalização do processo
+                </Typography>
+                
+                <Text b> {visible? format(finalTime, "dd/MM/yyyy"): ''}  </Text>
               </Row>
+              <Divider />
             </Col>
           </Grid>
         </S.Container>
