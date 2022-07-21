@@ -131,7 +131,7 @@ const HomeComponent = () => {
           <Grid xs={12} sm={4}>
             <Col>
               <Row>            
-              <TextField label='Número de processo' fullWidth size='small'/>    
+              <TextField label='Número de processo' fullWidth size='small' {...getFieldProps('numProcesso')}/>    
               </Row>
               <Spacer y={1} />
               <Row>
