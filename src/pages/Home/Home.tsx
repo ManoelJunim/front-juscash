@@ -15,12 +15,12 @@ import {
   Select,
   TextField,
   Typography,
-  Divider
+  Divider,
 } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
-import { addMonths, format, formatDistanceStrict  } from 'date-fns'
+import { addMonths, format, formatDistanceStrict } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import ReactInputMask from 'react-input-mask';
 
@@ -37,35 +37,41 @@ const HomeComponent = () => {
   const [classe, setClasse] = useState<IReuAjustado | undefined>();
   const [prediction, setPrediction] = useState<number>(0);
   const [timeLeft, setTimeLeft] = useState<string>('');
-  const [ finalTime, setFinalTime] = useState<Date>(new Date())
-  const [visible, setVisible] = useState<boolean>(false)
+  const [finalTime, setFinalTime] = useState<Date>(new Date());
+  const [visible, setVisible] = useState<boolean>(false);
 
-  const setResult = (response : number) => {
+  const setResult = (response: number) => {
     setPrediction(response);
-    setFinalTime( addMonths(new Date(values.dataInicio.split('-').join(',')), response))
-    setTimeLeft( formatDistanceStrict(  new Date() ,addMonths(new Date(values.dataInicio.split('-').join(',')), response) ,{unit:'month', locale:ptBR } )   )
-    setVisible(true)
-  }
+    setFinalTime(
+      addMonths(new Date(values.dataInicio.split('-').join(',')), response)
+    );
+    setTimeLeft(
+      formatDistanceStrict(
+        new Date(),
+        addMonths(new Date(values.dataInicio.split('-').join(',')), response),
+        { unit: 'month', locale: ptBR }
+      )
+    );
+    setVisible(true);
+  };
 
   const clearFields = () => {
     resetForm();
     setPrediction(0);
-    setFinalTime(new Date())
-    setTimeLeft('0 meses')
-    setVisible(false)
+    setFinalTime(new Date());
+    setTimeLeft('0 meses');
+    setVisible(false);
   };
 
   const handleClasse = (value: string) => {
-    setReu( value);
+    setReu(value);
     setFieldValue('reuAjustado', value);
   };
 
   useEffect(() => {
-   
     const getFormData = async () => {
       const response = await FormServices.getData();
       setData(response);
-     
     };
 
     getFormData().catch(console.error);
@@ -113,7 +119,7 @@ const HomeComponent = () => {
     onSubmit: async () => {
       try {
         const response = await FormServices.getPrediction(values);
-        setResult(response)  
+        setResult(response);
         toast.success('Predição concluída! 🚀');
       } catch (error: any) {
         toast.error(error);
@@ -128,16 +134,15 @@ const HomeComponent = () => {
         <S.Container>
           <Grid xs={12} sm={4}>
             <Col>
-              <Row>    
-                      
+              <Row>
                 <TextField
-               label='Número de processo'
-                fullWidth size='small'
-                {...getFieldProps('numProcesso')}
+                  label="Número de processo"
+                  fullWidth
+                  size="small"
+                  {...getFieldProps('numProcesso')}
                   error={!!errors.numProcesso}
-                   helperText={errors.numProcesso}/>
-               
-             
+                  helperText={errors.numProcesso}
+                />
               </Row>
               <Spacer y={1} />
               <Row>
@@ -151,7 +156,7 @@ const HomeComponent = () => {
                     error={!!errors.reuAjustado}
                   >
                     {data?.reu_ajustado.map((n, index) => {
-                      return  (
+                      return (
                         <MenuItem key={index} value={n.indice_reu}>
                           <Typography variant="body2">{n.nome}</Typography>
                         </MenuItem>
@@ -311,7 +316,7 @@ const HomeComponent = () => {
                   css={{ backgroundColor: '#023A51' }}
                 >
                   {isSubmitting ? (
-                    <Loading />
+                    <Loading size="sm" />
                   ) : (
                     <Text color="#fff"> Calcular</Text>
                   )}
@@ -319,49 +324,60 @@ const HomeComponent = () => {
               </Row>
             </Col>
           </Grid>
-          <Grid xs={12} sm={8} style={{ marginLeft: 25}}>
-            <Col >
+          <Grid xs={12} sm={8} style={{ marginLeft: 25 }}>
+            <Col>
               <Row align="center">
                 <Col>
-                <Typography variant='body1' color='#7A7A7A'>
-                  Previsão de duração total do processo
-                </Typography>
+                  <Typography variant="body1" color="#7A7A7A">
+                    Previsão de duração total do processo
+                  </Typography>
                 </Col>
                 <Col>
-                <Row justify='center'>
-                <Text b size={15}> {visible? `${prediction} meses` : ''} </Text>
-                </Row>
+                  <Row justify="center">
+                    <Text b size={15}>
+                      {' '}
+                      {visible ? `${prediction} meses` : ''}{' '}
+                    </Text>
+                  </Row>
                 </Col>
               </Row>
               <Divider />
-              <Spacer y={0.5}/>
+              <Spacer y={0.5} />
               <Row align="center">
                 <Col>
-              <Typography variant='body1'color='#7A7A7A'>  
-                  Tempo restante até a data final do processo
-              </Typography>
-              </Col>
-              <Col>
-              <Row justify='center'>
-              <Text b size={15}> {visible? ( finalTime < new Date()? ' 0 meses '  : timeLeft   ) : ''} </Text>
-              </Row>
-              </Col>
-                
-              </Row>
-              <Divider />
-              <Spacer y={0.5}/>
-              <Row align="center">
-                < Col>
-              <Typography variant='body1' color='#7A7A7A'>
-                  
-                  Data para finalização do processo
-                </Typography>
+                  <Typography variant="body1" color="#7A7A7A">
+                    Tempo restante até a data final do processo
+                  </Typography>
                 </Col>
                 <Col>
-              <Row justify='center'>
-              <Text b size={15}> {visible? format(finalTime, "dd/MM/yyyy"): ''}  </Text>
+                  <Row justify="center">
+                    <Text b size={15}>
+                      {' '}
+                      {visible
+                        ? finalTime < new Date()
+                          ? ' 0 meses '
+                          : timeLeft
+                        : ''}{' '}
+                    </Text>
+                  </Row>
+                </Col>
               </Row>
-              </Col>
+              <Divider />
+              <Spacer y={0.5} />
+              <Row align="center">
+                <Col>
+                  <Typography variant="body1" color="#7A7A7A">
+                    Data para finalização do processo
+                  </Typography>
+                </Col>
+                <Col>
+                  <Row justify="center">
+                    <Text b size={15}>
+                      {' '}
+                      {visible ? format(finalTime, 'dd/MM/yyyy') : ''}{' '}
+                    </Text>
+                  </Row>
+                </Col>
               </Row>
               <Divider />
             </Col>
