@@ -319,7 +319,7 @@ const HomeComponent = () => {
               </Row>
             </Col>
           </Grid>
-          <Grid xs={12} sm={8} style={{ marginLeft: 15}}>
+          <Grid xs={12} sm={8} style={{ marginLeft: 25}}>
             <Col >
               <Row align="center">
                 <Col>
@@ -329,7 +329,7 @@ const HomeComponent = () => {
                 </Col>
                 <Col>
                 <Row justify='center'>
-                <Text b> {visible? `${prediction} meses` : ''} </Text>
+                <Text b size={15}> {visible? `${prediction} meses` : ''} </Text>
                 </Row>
                 </Col>
               </Row>
@@ -343,7 +343,7 @@ const HomeComponent = () => {
               </Col>
               <Col>
               <Row justify='center'>
-              <Text b> {visible? ( finalTime < new Date()? ' 0 meses '  : timeLeft   ) : ''} </Text>
+              <Text b size={15}> {visible? ( finalTime < new Date()? ' 0 meses '  : timeLeft   ) : ''} </Text>
               </Row>
               </Col>
                 
@@ -359,7 +359,7 @@ const HomeComponent = () => {
                 </Col>
                 <Col>
               <Row justify='center'>
-              <Text b> {visible? format(finalTime, "dd/MM/yyyy"): ''}  </Text>
+              <Text b size={15}> {visible? format(finalTime, "dd/MM/yyyy"): ''}  </Text>
               </Row>
               </Col>
               </Row>
