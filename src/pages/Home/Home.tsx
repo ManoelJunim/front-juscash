@@ -316,7 +316,7 @@ const HomeComponent = () => {
                   css={{ backgroundColor: '#023A51' }}
                 >
                   {isSubmitting ? (
-                    <Loading size="sm" />
+                    <Loading size="xs" color="currentColor" />
                   ) : (
                     <Text color="#fff"> Calcular</Text>
                   )}
