@@ -374,7 +374,7 @@ const HomeComponent = () => {
                   <Row justify="center">
                     <Text b size={15}>
                       {' '}
-                      {visible ? format(finalTime, 'dd/MM/yyyy') : ''}{' '}
+                      {visible ? format(finalTime, 'MM/yyyy') : ''}{' '}
                     </Text>
                   </Row>
                 </Col>
