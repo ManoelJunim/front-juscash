@@ -7,8 +7,8 @@ const Routes = () => {
   return (
     <Fragment>
       <Switch>
-        <Route path="/" element={<Home />} />
-        <Route path="signin" element={<Signin />} />
+        <Route path="/juscash" element={<Home />} />
+        <Route path="/juscash/signin" element={<Signin />} />
       </Switch>
     </Fragment>
   );

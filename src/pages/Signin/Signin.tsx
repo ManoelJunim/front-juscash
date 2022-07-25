@@ -49,14 +49,16 @@ const Signin = () => {
         CryptoJs.MD5(values.login).toString() ===
           'e3afed0047b08059d0fada10f400c1e5'
       ) {
-        setTimeout(()=>{ setAuth(true);
-          navitega('/');
-          setLoading(false);}, 3000 )
-        
+        setTimeout(() => {
+          setAuth(true);
+          navitega('/juscash');
+          setLoading(false);
+        }, 3000);
       } else {
         toast.error('Senha inválida!');
-        setTimeout(()=>{setLoading(false);}, 3000)
-        
+        setTimeout(() => {
+          setLoading(false);
+        }, 3000);
       }
     },
   });
@@ -114,10 +116,9 @@ const Signin = () => {
               css={{ width: '100%', backgroundColor: `${colors.seconday}` }}
               iconRight={<MdLogin fontSize={20} />}
               type="submit"
-              
             >
               <Text size={18} color={colors.white}>
-                {loading ? <Loading size='sm'/> : 'Entrar'}
+                {loading ? <Loading size="sm" /> : 'Entrar'}
               </Text>
             </Button>
           </Grid>

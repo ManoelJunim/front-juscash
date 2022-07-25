@@ -7,7 +7,7 @@ const withAuth = (WrappedComponent: React.ElementType) => {
   const WithAuth = ({ ...props }) => {
     const { auth } = useContext(SessionContext);
 
-    if (!auth) return <Navigate to="/signin" />;
+    if (!auth) return <Navigate to="/juscash/signin" />;
     else return <WrappedComponent {...props} />;
   };
 
